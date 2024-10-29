@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/cb61e2a7-69f2-434a-bc47-7df7cbdad03d)# Docker 6 --> Prestashop
+# Docker 6 --> Prestashop
 
 Si queremos instalar este servicio en un contenedor de manera manual podemos hacerlo siguiendo la siguiente [guía](https://hub.docker.com/r/prestashop/prestashop/).   
 En este ReadMe, se pondrá la estructura de un docker compose y se explicará por partes cada bloque de código.  
@@ -154,7 +154,7 @@ Aquí podrían surgir *2 problemas*:
     Los desniveles se tienen que formar con 2 espacio **y no valen las tabulaciones**.
 
 Con todo esto en cuenta, cuando ejecutes el comando debería de salirte algo así:   
-[imagenContainer](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2020-39-03.png?raw=true)  
+![imagenContainer](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2020-39-03.png?raw=true)  
 Luego tendrás que ejecutar este comando y buscarás la ip del contenedor de PrestaShop.   
 ```
 sudo docker ps -a #Para ver el id/nombre del contenedor   
@@ -168,30 +168,30 @@ En tu navegador buscarás:
 http://<ip_de_PrestaShop>
 ```
 Y *(si todo sale bien)* te saldrá esto:  
-[imgInicio](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2018-55-58.png?raw=true)    
+![imgInicio](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2018-55-58.png?raw=true)    
 
 Después de escoger el idioma tendrás que aceptar las condiciones de la siguiente captura:  
-[imgCond](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2018-56-19.png?raw=true)
+![imgCond](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2018-56-19.png?raw=true)
 
 Tras aceptar las condiciones, el servicio analizará si tu máquina tiene las dependencias necesarias y, en caso de que no las tuviera, se descargarían *(con esto no quiere decir que se tengan que definir con el compose, solo que mirará si tu máquina es capaz de tener PHP o cosas así).   
 
 Con esto superado, tendrás que rellenar los datos de tu tienda, como el nombre, el usuario que la va a usar, su contraseña, etc... *(no tiene nada que ver con la BD)*
 
 Con todo ello, te saldrá la siguiente pestaña:   
-[imgdep](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2018-57-37.png?raw=true)   
+![imgdep](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2018-57-37.png?raw=true)   
 Esto es básicamente si quieres instalar los módulos y las demostraciones de PrestaShop.   
 
 Luego te saldrá la siguiente pestaña:   
-[imgDB](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/380812119-a0cf58d3-eccf-4bff-a943-92c13b01ca77.png?raw=true)   
+![imgDB](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/380812119-a0cf58d3-eccf-4bff-a943-92c13b01ca77.png?raw=true)   
 Aquí tendrás que rellenar los datos que te piden con los datos que metiste en la etiqueta *environment* del .yml.  
 A continuación, empezará a configurar todo el sistema. Te aparecerá como en la siguiente imagen:  
-[imgConfg](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2019-37-41.png?raw=true)   
+![imgConfg](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2019-37-41.png?raw=true)   
 Tras esto, aparecerá la siguiente ventana conforme se ha instalado correctamente:  
-[imgInst](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2019-43-59.png?raw=true)   
+![imgInst](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2019-43-59.png?raw=true)   
 Viendo esto pensarás que has acabado, pero ahora mismo solo podrás ver la página de inicio que puede ver todo el mundo.  
-[imgFront](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2021-07-01.png?raw=true)   
+![imgFront](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2021-07-01.png?raw=true)   
 Al intentar acceder a la administración de la tienda te saldrá lo siguiente:   
-[imgErr](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2019-46-52.png?raw=true)
+![imgErr](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2019-46-52.png?raw=true)
 Como te indica el cuadro, tienes que eliminar la carpeta **/install** y modificar la **/admin** con los siguientes comandos:
 ```
 docker exec -it <nombre_o_id_del_contenedor_prestashop> rm -rf /var/www/html/install
@@ -202,7 +202,7 @@ Con esto tendrás que ir al siguiente enlace:
 http://<IP_del_contenedor>/admin896sjdin1230jdndi
 ```
 Y te saldrá esto:   
-[imgIS](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2019-49-04.png?raw=true)   
+![imgIS](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2019-49-04.png?raw=true)   
 Tras poner el nombre y contraseña del usuario que **TÚ** mismo has hecho, te saldrá la siguiente pantalla.   
 [imgBack](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2019-49-12.png?raw=true)   
 
