@@ -204,6 +204,6 @@ http://<IP_del_contenedor>/admin896sjdin1230jdndi
 Y te saldrá esto:   
 ![imgIS](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2019-49-04.png?raw=true)   
 Tras poner el nombre y contraseña del usuario que **TÚ** mismo has hecho, te saldrá la siguiente pantalla.   
-[imgBack](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2019-49-12.png?raw=true)   
+![imgBack](https://github.com/YoelGarciaLago/dockerEJ6/blob/master/imagenes/Captura%20de%20pantalla%20de%202024-10-29%2019-49-12.png?raw=true)   
 
 Y *(ahora sí)* se ha terminado la instalación de PrestaShop.  
